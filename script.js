@@ -146,11 +146,22 @@ function getCars() {
         return JSON.parse(cars);
     } else {
         return [
-            { name: "تويوتا كامري 2022", price: 25000, phone: "966500000000", img: "https://via.placeholder.com/300x200?text=Camry", desc: "فل كامل، فتحة سقف، بحالة الوكالة" },
-            { name: "هيونداي سوناتا 2021", price: 21000, phone: "966500000000", img: "https://via.placeholder.com/300x200?text=Sonata", desc: "نص فل، ماشي 30 ألف كم، لون أبيض" },
-            { name: "مرسيدس C200 2018", price: 35000, phone: "966500000000", img: "https://via.placeholder.com/300x200?text=Mercedes", desc: "كت AMG، وارد الجفالي" },
-            { name: "فورد موستنج 2019", price: 32000, phone: "966500000000", img: "https://via.placeholder.com/300x200?text=Mustang", desc: "GT، كشف، لون أحمر مميز" },
-            { name: "شيفروليه تاهو 2020", price: 50000, phone: "966500000000", img: "https://via.placeholder.com/300x200?text=Tahoe", desc: "LTZ، دبل، مراتب جلد" },
+            { name: "تويوتا كامري 2022", price: 25000, phone: "966500000000", img: "img/1.jpg", desc: "فل كامل، فتحة سقف، بحالة الوكالة" },
+            { name: "هيونداي سوناتا 2021", price: 21000, phone: "966500000000", img: "img/2.webp", desc: "نص فل، ماشي 30 ألف كم، لون أبيض" },
+            { name: "مرسيدس C200 2018", price: 35000, phone: "966500000000", img: "img/3.webp", desc: "كت AMG، وارد الجفالي" },
+            { name: "فورد موستنج 2019", price: 32000, phone: "966500000000", img: "img/4.webp", desc: "GT، كشف، لون أحمر مميز" },
+            { name: "شيفروليه تاهو 2020", price: 50000, phone: "966500000000", img: "img/5.webp", desc: "LTZ، دبل، مراتب جلد" },
+            { name: "مرسيدس C200 2018", price: 35000, phone: "966500000000", img: "img/6.webp", desc: "كت AMG، وارد الجفالي" },
+            { name: "بي ام دبليو 520i 2019", price: 38000, phone: "966500000000", img: "img/7.webp", desc: "لجشري كيت، صيانة مجانية" },
+            { name: "أودي A6 2020", price: 42000, phone: "966500000000", img: "img/8.webp", desc: "كواترو، شاشات خلفية" },
+            { name: "لكزس ES350 2021", price: 48000, phone: "966500000000", img: "img/9.webp", desc: "CC، بانوراما، تيتانيوم" },
+            { name: "مازدا 6 2022", price: 23000, phone: "966500000000", img: "img/10.webp", desc: "سيجنتشر، تيربو، لون كحلي" },
+            { name: "كيا سبورتاج 2021", price: 22000, phone: "966500000000", img: "img/11.webp", desc: "بانوراما، مكينة 2.0" },
+            { name: "تويوتا كورولا 2020", price: 16000, phone: "966500000000", img: "img/12.webp", desc: "XLI، فتحة، جنوط" },
+            { name: "هيونداي توسان 2022", price: 27000, phone: "966500000000", img: "img/13.webp", desc: "الشكل الجديد، سمارت" },
+            { name: "نيسان صني 2019", price: 9000, phone: "966500000000", img: "img/14.webp", desc: "سيارة عملية، مكيف ثلج" },
+            { name: "جيب رانجلر 2018", price: 28000, phone: "966500000000", img: "img/15.webp", desc: "صحارى، معدل ترفيع" },
+            { name: "رنج روفر سبورت 2020", price: 95000, phone: "966500000000", img: "img/16.webp", desc: "أوتوبيوفي، 8 سلندر سوبر تشارج" }
         ];
     }
 }
@@ -259,4 +270,5 @@ function setupScrollAnimation() {
         });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal-item').forEach(item => observer.observe(item));
+
 }
