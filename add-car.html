@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>إضافة سيارة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>أضف سيارتك للبيع</h1>
+        <a href="index.html">العودة للرئيسية</a>
+        <nav>
+            <a href="index.html">العودة للرئيسية</a>
+        </nav>
+        
+    </header>
+
+    <main>
+        <div class="form-container">
+            <form id="addCarForm">
+                <input type="text" id="carName" placeholder="نوع السيارة وموديلها" required>
+                <input type="number" id="carPrice" placeholder="السعر ($)" required>
+                <input type="number" id="carPhone" placeholder="رقم جوال للتواصل (مثلاً: 967 77xxxxxxx)" required>
+               <input type="file" id="carImage" accept="image/*" required>
+                <textarea id="carDesc" placeholder="وصف حالة السيارة..."></textarea>
+                <button type="submit">نشر الإعلان</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

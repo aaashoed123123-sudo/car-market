@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>سوق السيارات</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>سوق السيارات المستعملة</h1><a href="CRUDS/index.html" class="btn">مشروع جافا </a>
+        <nav>
+            <a href="CRUDS/index.html" class="btn">مشروع جافا </a>
+            <a href="index.html">الرئيسية</a>
+            <a href="add-car.html" class="btn">بيع سيارتك</a>
+            
+
+        </nav>
+         
+    </header>
+
+    <main>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن نوع السيارة..." onkeyup="filterCars()">
+        </div>
+
+        <div id="carsContainer" class="cars-grid"></div>
+    </main>
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            
+            <div class="modal-header">
+                <h2>📞 تواصل مع البائع</h2>
+                <p id="modalCarInfo">تفاصيل السيارة</p>
+            </div>
+
+            <div class="action-buttons">
+                <a id="whatsappBtn" href="#" target="_blank" class="action-btn whatsapp">
+                    <span class="icon">💬</span>
+                    <div class="btn-text">
+                        <span>محادثة واتساب</span>
+                        <small>رد سريع</small>
+                    </div>
+                </a>
+                
+                <a id="callBtn" href="#" class="action-btn phone">
+                    <span class="icon">📞</span>
+                    <div class="btn-text">
+                        <span>اتصال هاتفي</span>
+                        <small>مكالمة مباشرة</small>
+                    </div>
+                </a>
+            </div>
+
+            <div class="copy-section">
+                <button onclick="copyPhoneNumber()" class="copy-btn">
+                    نسخ رقم الهاتف 📋
+                </button>
+            </div>
+
+            <div class="safety-tip">
+                ⚠️ <strong>تنبيه:</strong> لا تقم بتحويل أي أموال قبل معاينة السيارة وفحصها.
+            </div>
+        </div>
+    </div>
+
+    </main> <footer class="site-footer">
+        <div class="footer-content">
+            <h3>سوق السيارات 🚗</h3>
+            <p>
+                 تم التطوير بواسطة المهندس / 
+                <a href="img/my.jpg" class="dev-name">شعيب الشامي</a>
+            </p>
+            
+            <div class="footer-links">
+                <a href="#">من نحن</a>
+                <a href="#">سياسة الخصوصية</a>
+                <a href="#">اتصل بنا</a>
+            </div>
+
+            <p class="copyright">
+                &copy; <span id="year"></span> جميع الحقوق محفوظة لدى شعيب الشامي.
+            </p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,666 @@
+/* --- إعدادات عامة ومتغيرات الألوان --- */
+:root {
+    --primary-grad: linear-gradient(135deg, #2c3e50, #4ca1af); /* تدرج أزرق غامق */
+    --accent-grad: linear-gradient(135deg, #11998e, #38ef7d); /* تدرج أخضر للأسعار والأزرار */
+    --hover-grad: linear-gradient(135deg, #38ef7d, #11998e); /* عكس الأخضر عند التحويم */
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+body {
+    font-family: 'Tajawal', sans-serif; /* الخط الجديد */
+    background-color: var(--bg-color);
+    margin: 0;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- الهيدر بتدرج لوني --- */
+/* --- 1. تنسيق الهيدر (شريط التنقل العلوي) --- */
+header {
+    background: #ffffff; /* خلفية بيضاء نظيفة */
+    padding: 15px 5%; /* مساحة داخلية مريحة */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05); /* ظل خفيف جداً */
+    position: sticky; /* تثبيت الهيدر عند التمرير */
+    top: 0;
+    z-index: 1000;
+}
+
+/* تنسيق اللوجو (عنوان الموقع) */
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #2c3e50;
+    margin: 0;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* جعل النص متدرج اللون */
+}
+
+/* تنسيق روابط التنقل */
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* مسافة بين الأزرار */
+}
+
+header nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+    position: relative;
+}
+
+header nav a:hover {
+    color: #4ca1af;
+}
+
+/* تمييز زر "بيع سيارتك" ليكون ملفتاً */
+header nav a.btn {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    color: white !important;
+    padding: 10px 25px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(56, 239, 125, 0.3);
+    border: none;
+}
+
+header nav a.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(56, 239, 125, 0.4);
+}
+a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+    position: relative;
+}a.btn {background: linear-gradient(135deg, #11998e, #38ef7d);
+    color: white !important;
+    padding: 10px 25px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(56, 239, 125, 0.3);
+    border: none;}
+a.btn:hover{transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(56, 239, 125, 0.4);}
+
+
+/* --- 2. تحسين منطقة البحث (Hero Search) --- */
+.search-box {
+    background: linear-gradient(135deg, #2c3e50, #4ca1af); /* خلفية ملونة لمنطقة البحث */
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 0 0 50px 50px; /* حواف دائرية من الأسفل فقط */
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(44, 161, 175, 0.2);
+    margin-top: -20px; /* لسحبها للأعلى قليلاً تحت الهيدر */
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 600px; /* أقصى عرض لشريط البحث */
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    text-align: center; /* النص في المنتصف */
+}
+
+.search-box input:focus {
+    transform: scale(1.2); /* تكبير بسيط عند الضغط */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    outline: none;
+}
+
+.search-box input::placeholder {
+    color: #aaa;
+    font-weight: normal;
+}
+
+/* --- الشبكة والبحث --- */
+main { padding: 2rem; max-width: 1200px; margin: 0 auto; }
+
+
+
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* --- تصميم البطاقة السحري --- */
+.car-card {
+    background: var(--card-bg);
+    border-radius: 20px; /* حواف ناعمة جداً */
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* حركة فيزيائية ناعمة */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+/* تكبير البطاقة عند المرور عليها */
+.car-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+/* حاوية الصورة لضبط التكبير */
+.img-wrapper {
+    overflow: hidden; /* يمنع الصورة من الخروج خارج الإطار عند التكبير */
+    height: 220px;
+    position: relative;
+}
+
+.car-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease; /* تكبير ناعم للصورة */
+}
+
+/* تكبير الصورة داخل الإطار عند تحويم الماوس */
+.car-card:hover img {
+    transform: scale(1.15) rotate(1deg); /* تكبير مع ميلان خفيف جداً */
+}
+
+.car-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.car-info h3 { margin: 0 0 10px; color: #2c3e50; }
+
+.price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    background: var(--accent-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* نص متدرج اللون */
+    margin-bottom: 10px;
+}
+
+/* --- زر التواصل الإبداعي --- */
+.contact-btn {
+    margin-top: auto;
+    background: var(--primary-grad);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+}
+
+/* حركة الزر عند المرور */
+.contact-btn:hover {
+    background: var(--accent-grad);
+    transform: scale(1.05); /* يكبر قليلاً */
+    letter-spacing: 1px; /* تباعد الأحرف */
+    box-shadow: 0 8px 20px rgba(56, 239, 125, 0.4);
+}
+
+.contact-btn:active { transform: scale(0.95); }
+
+/* --- المودال (النافذة المنبثقة) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 62, 80, 0.8); /* خلفية داكنة زرقاء */
+    backdrop-filter: blur(8px); /* تأثير الزجاج الضبابي */
+    animation: fadeIn 0.4s;
+}
+
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    animation: slideUp 0.4s;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- تنسيقات صفحة إضافة سيارة (Add Car Page) --- */
+
+.form-container {
+    background: #ffffff;
+    max-width: 600px; /* عرض مناسب للنموذج */
+    margin: 50px auto; /* توسيط في منتصف الشاشة */
+    padding: 40px;
+    border-radius: 20px; /* حواف ناعمة مثل البطاقات */
+    box-shadow: var(--shadow-soft); /* نفس ظل البطاقات */
+    animation: slideUp 0.5s; /* حركة ظهور ناعمة */
+}
+
+/* عنوان النموذج */
+.form-container h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* حقول الإدخال (Inputs & Textarea) */
+.form-container input, 
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #eee;
+    border-radius: 15px; /* حواف دائرية للحقول */
+    background: #f9f9f9;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s;
+    box-sizing: border-box; /* لضمان عدم خروج الحقل عن الإطار */
+}
+
+/* تأثير عند الضغط داخل الحقل */
+.form-container input:focus, 
+.form-container textarea:focus {
+    border-color: #4ca1af; /* لون التركواز */
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(76, 161, 175, 0.1);
+}
+
+/* تنسيق خاص لمنطقة رفع الملف (File Input) */
+.form-container input[type="file"] {
+    padding: 10px;
+    background: white;
+    border: 2px dashed #ccc; /* إطار متقطع يوحي بالرفع */
+    cursor: pointer;
+}
+
+.form-container input[type="file"]:hover {
+    border-color: #4ca1af;
+    background: #f0faff;
+}
+
+/* زر النشر (Submit Button) */
+.form-container button {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-grad); /* التدرج اللوني الأساسي */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.form-container button:hover {
+    transform: translateY(-3px); /* يرتفع قليلاً */
+    box-shadow: 0 10px 20px rgba(44, 62, 80, 0.2);
+}
+
+/* --- 1. حركات تحميل الصفحة (Keyframes) --- */
+
+/* حركة ظهور ناعمة من الأسفل للأعلى */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* تبدأ منزاحة للأسفل قليلاً */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* تستقر في مكانها الطبيعي */
+    }
+}
+
+/* حركة ظهور متأخرة (للعناصر التي نريدها أن تظهر بعد الهيدر) */
+@keyframes fadeInDelayed {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* تطبيق حركة التحميل على الهيدر والمحتوى الرئيسي */
+header {
+    animation: fadeInUp 0.8s ease-out; /* الهيدر يظهر أولاً */
+}
+
+main {
+    animation: fadeInUp 0.8s ease-out 0.2s backwards; /* المحتوى يظهر بعد تأخير بسيط */
+}
+
+/* --- 2. تجهيز حركات التمرير (Scroll Reveal CSS) --- */
+
+/* هذه الكلاس سنضيفها للسيارات لكي تكون مخفية في البداية */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95); /* مخفية ومنزاحة للأسفل ومصغرة قليلاً */
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* حركة انسيابية جداً */
+}
+
+/* عندما تصبح السيارة مرئية على الشاشة، نضيف لها هذا الكلاس بالجافاسكربت */
+.reveal-item.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* تعود لحجمها ومكانها الطبيعي */
+}
+
+
+/* --- 3. تحسينات إضافية على التفاعلات (Links Hover) --- */
+header nav a {
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* إضافة خط يتحرك تحت الروابط عند المرور */
+header nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #4ca1af; /* لون الخط */
+    transition: width 0.3s ease-in-out;
+}
+
+header nav a:hover::after {
+    width: 100%; /* الخط يتمدد ليغطي كامل الرابط */
+}
+/* --- تنسيقات النافذة المنبثقة المحسنة --- */
+
+/* تحسين الخلفية الضبابية */
+.modal {
+    backdrop-filter: blur(8px); /* تأثير الزجاج */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 25px;
+    padding: 0; /* سنستخدم padding داخلي للعناصر */
+    overflow: hidden;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); /* توسيط عمودي دقيق */
+    margin: auto;
+    animation: zoomIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoomIn {
+    from { transform: translateY(-50%) scale(0.8); opacity: 0; }
+    to { transform: translateY(-50%) scale(1); opacity: 1; }
+}
+
+/* رأس النافذة */
+.modal-header {
+    background: linear-gradient(135deg, #f6f8f9 0%, #e5ebee 100%);
+    padding: 25px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 { margin: 0; color: #2c3e50; font-size: 1.5rem; }
+.modal-header p { margin: 5px 0 0; color: #7f8c8d; font-size: 0.9rem; }
+
+/* زر الإغلاق */
+.close-btn {
+    top: 15px; left: 20px; color: #7f8c8d; background: #fff;
+    width: 30px; height: 30px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.close-btn:hover { background: #e74c3c; color: #fff; transform: rotate(90deg); }
+
+/* الأزرار الكبيرة */
+.action-buttons {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* ألوان الأزرار */
+.action-btn.whatsapp { background: linear-gradient(45deg, #25D366, #128C7E); }
+.action-btn.phone { background: linear-gradient(45deg, #3498db, #2980b9); }
+
+.action-btn .icon { font-size: 1.8rem; margin-left: 15px; }
+.action-btn .btn-text { text-align: right; }
+.action-btn .btn-text span { display: block; font-weight: bold; font-size: 1.1rem; }
+.action-btn .btn-text small { font-size: 0.8rem; opacity: 0.8; }
+
+/* قسم النسخ والتحذير */
+.copy-section { padding: 0 20px; margin-bottom: 15px; }
+.copy-btn {
+    background: #f1f2f6; color: #2c3e50; border: 1px dashed #bdc3c7;
+    padding: 10px; width: 100%; border-radius: 10px; cursor: pointer;
+    font-family: 'Tajawal'; transition: 0.3s;
+}
+.copy-btn:hover { background: #e1e2e6; border-color: #95a5a6; }
+
+.safety-tip {
+    background: #fff3cd; color: #856404;
+    padding: 15px; font-size: 0.85rem;
+    border-top: 1px solid #ffeeba;
+}
+
+/* --- تنسيقات صفحة تسجيل الدخول --- */
+
+/* صندوق الدخول */
+.auth-box {
+    max-width: 400px;
+    margin-top: 80px;
+    text-align: center;
+}
+
+/* أزرار التبديل (Tabs) */
+.auth-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background: #f1f2f6;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+.auth-toggle button {
+    background: transparent;
+    color: #7f8c8d;
+    box-shadow: none;
+    margin: 0;
+    padding: 10px 20px;
+    width: 50%;
+}
+
+.auth-toggle button.active {
+    background: #fff;
+    color: #2c3e50;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transform: none; /* إلغاء حركة الرفع */
+}
+
+.auth-toggle button:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* --- تنسيقات الإشعارات المخصصة (Toast Notification) --- */
+#customToast {
+    visibility: hidden; /* مخفي افتراضياً */
+    min-width: 300px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    border-radius: 12px;
+    padding: 16px 20px;
+    position: fixed;
+    z-index: 3000; /* ليظهر فوق كل شيء */
+    left: 50%;
+    transform: translateX(-50%); /* توسيط في الشاشة */
+    top: -100px; /* مخفي في الأعلى */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    font-family: 'Tajawal', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* حركة ارتدادية جميلة */
+}
+
+/* كلاس الظهور */
+#customToast.show {
+    visibility: visible;
+    opacity: 1;
+    top: 30px; /* ينزل للأسفل قليلاً */
+}
+
+/* تنسيق حالة النجاح (أخضر) */
+#customToast.success {
+    border-right: 5px solid #2ecc71;
+    color: #2c3e50;
+}
+#customToast.success span { color: #2ecc71; font-size: 1.2rem; }
+
+/* تنسيق حالة الخطأ (أحمر) */
+#customToast.error {
+    border-right: 5px solid #e74c3c;
+    color: #2c3e50;
+}
+#customToast.error span { color: #e74c3c; font-size: 1.2rem; }
+
+/* --- تنسيقات الفوتر (Footer) --- */
+.site-footer {
+    background: linear-gradient(135deg, #2c3e50, #1a252f); /* لون داكن أنيق */
+    color: #ecf0f1;
+    padding: 60px 20px 30px;
+    text-align: center;
+    margin-top: 80px; /* مسافة تفصله عن السيارات */
+    border-top-left-radius: 50px; /* انحناء من الأعلى */
+    border-top-right-radius: 50px;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* خط تجميلي في أعلى الفوتر */
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(to right, #11998e, #38ef7d); /* الخط الأخضر */
+}
+
+.footer-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-content p {
+    font-size: 1rem;
+    color: #bdc3c7;
+    margin-bottom: 20px;
+}
+
+/* اسم المطور */
+.dev-name {
+    color: #38ef7d; /* لون مميز لاسمك */
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+.dev-name:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(56, 239, 125, 0.8);
+}
+
+/* روابط الفوتر */
+.footer-links {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    opacity: 0.7;
+    transition: 0.3s;
+    position: relative;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+/* حقوق النشر */
+.copyright {
+    font-size: 0.85rem;
+    opacity: 0.5;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+}

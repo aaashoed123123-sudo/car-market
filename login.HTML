@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تسجيل الدخول - سوق السيارات</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>سوق السيارات</h1>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container auth-box">
+            <div class="auth-toggle">
+                <button id="loginBtn" class="active" onclick="showLogin()">تسجيل دخول</button>
+                <button id="registerBtn" onclick="showRegister()">حساب جديد</button>
+            </div>
+
+            <form id="loginForm">
+                <h2>أهلاً بك مجدداً 👋</h2>
+                <input type="text" id="loginUser" placeholder="اسم المستخدم" required>
+                <input type="password" id="loginPass" placeholder="كلمة المرور" required>
+                <button type="submit">دخول</button>
+            </form>
+
+            <form id="registerForm" style="display: none;">
+                <h2>إنشاء حساب جديد 🚀</h2>
+                <input type="text" id="regUser" placeholder="اسم المستخدم" required>
+                <input type="email" placeholder="البريد الإلكتروني" required>
+                <input type="password" id="regPass" placeholder="كلمة المرور" required>
+                <button type="submit">تسجيل حساب</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
